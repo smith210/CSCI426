@@ -1,16 +1,16 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View} from 'react-native';
+import Home from './screens/home';
 
-import Home from "./components/home.component";
+const AppContainer = createAppContainer(AppNavigator);
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+  return <AppContainer />;
+    /*<View style={styles.container}>
       <Home></Home>
     </View>
     
-  );
+  );*/
 }
 
 const styles = StyleSheet.create({
