@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import { Text, View, Button } from 'react-native';
+import { Text, View, Button, StyleSheet } from 'react-native';
+
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator, } from 'react-navigation-stack';
 
-import home from '../screens/home';
-import inventory from '../screens/inventory';
+import homeScreen from '../screens/home';
+import inventoryScreen from '../screens/inventory';
 
 /*const App = StackNavigator({
   Home: {screen: home},
@@ -13,31 +14,46 @@ import inventory from '../screens/inventory';
 
 
 
- class Home extends Component {
+ export default class Home extends Component {
  
-  static navigationOptions = {
-    title: 'Welcome',
-  };
+  //static navigationOptions = {
+   // title: 'Welcome',
+ // };
   render() {
-    const {navigate} = this.props.navigation;
+    //const {navigate} = this.props.navigation;
     return (
-      <View>
+      
+      <View > 
         <Text>Welcome to SmartFridge! Start by opening up the inventory or add an item. </Text>
-        <Button title="Inventory" onPress={() => navigate('Inventory')}/>
-        <Button title="Add Food"/>
+        md-home
+        <View style={styles.button}> 
+          <Button title="Inventory" onPress={() => navigate('Inventory')}/>
+          <Button title="Add Food"/>
+        </View>
       </View>
     );
   }
 }
 
+const styles = StyleSheet.create({
+  button: {
+    justifyContent: 'space-between',
+    flexDirection: 'row',
+    margin: 100,
+    marginTop: 10,
 
-const AppNavigator = createStackNavigator({
+  },
+
+});
+
+
+/*const AppNavigator = createStackNavigator({
   Home: {
-    screen: home,
+    screen: homeScreen,
   },
   Inventory : {
-    screen: inventory,
+    screen: inventoryScreen,
   }
 });
 
-export default createAppContainer(AppNavigator);
+export default createAppContainer(AppNavigator);*/
