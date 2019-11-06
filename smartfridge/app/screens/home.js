@@ -4,8 +4,6 @@ import { Text, View, Button, StyleSheet } from 'react-native';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator, } from 'react-navigation-stack';
 
-import homeScreen from '../screens/home';
-import inventoryScreen from '../screens/inventory';
 
 /*const App = StackNavigator({
   Home: {screen: home},
@@ -25,7 +23,7 @@ import inventoryScreen from '../screens/inventory';
       
       <View > 
         <Text>Welcome to SmartFridge! Start by opening up the inventory or add an item. </Text>
-        md-home
+    
         <View style={styles.button}> 
           <Button title="Inventory" onPress={() => navigate('Inventory')}/>
           <Button title="Add Food"/>
