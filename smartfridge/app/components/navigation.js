@@ -1,4 +1,4 @@
-import { createDrawerNavigator, } from 'react-navigation-drawer';
+//import { createDrawerNavigator, } from 'react-navigation-drawer';
 import { Header,  Button } from 'react-native-elements';
 import { Ionicons } from '@expo/vector-icons';
 import { createStackNavigator, } from 'react-navigation-stack';
@@ -11,9 +11,7 @@ const NavStack = createStackNavigator({
     screen: Home,
     navigationOptions: {
       title: 'HomeScreen',
-      headerLeft: ()=> (
-        <Button buttonStyle={styles.container} icon={<Ionicons name="md-menu" size={32} color={'#000'}/>} />
-      ),
+      
     },
   },
 
@@ -28,7 +26,9 @@ const NavStack = createStackNavigator({
 
 });
 
-const DrawerNav = createDrawerNavigator(
+export default NavStack;
+
+/*const DrawerNav = createDrawerNavigator(
 {
   Home: NavStack,
 },
@@ -38,6 +38,6 @@ const DrawerNav = createDrawerNavigator(
 }
 )
 
-export default DrawerNav;
+export default DrawerNav;*/
 
 
