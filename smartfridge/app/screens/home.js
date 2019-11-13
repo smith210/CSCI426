@@ -1,25 +1,12 @@
 import React, { Component } from 'react';
-import { Header } from 'react-native-elements';
-import { Ionicons } from '@expo/vector-icons';
 import { Text, View, Button, StyleSheet } from 'react-native';
 
 
-
  export default class Home extends Component {
-   
- 
-  //static navigationOptions = {
-   // title: 'Welcome',
- // };
-  render() {
-    //const {navigate} = this.props.navigation;
- 
+  render() { 
     return (
-      
       <View > 
-         
         <Text>Welcome to SmartFridge! Start by opening up the inventory or add an item. </Text>
-    
         <View style={styles.button}> 
           <Button title="Inventory" onPress={() => this.props.navigation.navigate('InventoryScreen')}/>
           <Button title="Add Food"/>
