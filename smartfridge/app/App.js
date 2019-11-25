@@ -1,7 +1,8 @@
-import React from 'react';
-import { StyleSheet, } from 'react-native';
+import React ,{Component,}from 'react';
+import { StyleSheet,View } from 'react-native';
 import { createAppContainer , } from 'react-navigation';
 import 'react-native-gesture-handler';
+
 
 
 
@@ -10,8 +11,13 @@ import Nav from './components/navigation';
 
 const AppNavigator = createAppContainer(Nav);
 
-export default function App() {
-    return <AppNavigator/>
+class App extends Component{
+ 
+  render(){
+    return(
+      <AppNavigator/>
+  )}
+    
   }
 
 
@@ -24,5 +30,7 @@ const styles = StyleSheet.create({
   },
 
 });
+
+export default App;
 
 

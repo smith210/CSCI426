@@ -1,5 +1,5 @@
 import React, { Component,} from 'react';
-import { Text, View,  StyleSheet, Button, DrawerLayoutAndroid, ListView, FlatList, ScrollView } from 'react-native';
+import { Text, View,  StyleSheet, FlatList, ScrollView } from 'react-native';
 
 import { Ionicons } from '@expo/vector-icons';
 
@@ -7,6 +7,15 @@ import FoodItem from '../objects/FoodItem';
 
 
 export default class Inventory extends Component {
+ /*constructor(props) {
+   super(props);
+
+   this.state= {
+     loading: false,
+     data: [],
+     error: null
+   };
+ }*/
 
   /*state = {
     search: '',
@@ -16,24 +25,11 @@ export default class Inventory extends Component {
     this.setState({search});
   }
 
-
-  render() {
-
-    //const {search} = this.state;
-
-    return (
-      <View>
-        <Text>Hello, world!</Text>
-      
-        
-        
-      </View>
-    );
   }*/
 
   render() {
     return(
-    <View>
+    <View style={styles.container}>
       <ScrollView>
         <FlatList
         data={[
@@ -52,6 +48,8 @@ export default class Inventory extends Component {
 }
 
 const styles = StyleSheet.create({
+
+
   icon: {
     flex: 1,
     position: 'absolute',
@@ -60,6 +58,7 @@ const styles = StyleSheet.create({
     marginLeft: 320
   },
   container: {
+    
     flex: 1,
     paddingTop: 22
    },
