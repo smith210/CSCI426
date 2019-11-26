@@ -10,21 +10,20 @@ class Search extends Component{
        search: '',
    }
   
-    
-      updateSearch = search => {
-        this.setState({search});
-        
-      }
+    updateSearch = search => {
+      this.setState({search});
+      
+    }
 
-      render(){
-          const {search} = this.state;
-          return (
-            <View style={styles.search}>
-            <Ionicons name="md-search" size={20}/>
-            <TextInput placeholder='Type Search here' onChangeText={this.updateSearch} value={search} />
-          </View>
-          );
-      }
+    render(){
+        const {search} = this.state;
+        return (
+          <View style={styles.search}>
+          <Ionicons name="md-search" size={20}/>
+          <TextInput placeholder='Type Search here' onChangeText={this.updateSearch} value={search} />
+        </View>
+        );
+    }
 }
 
 const styles = StyleSheet.create({

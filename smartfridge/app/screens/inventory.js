@@ -1,6 +1,6 @@
 import React, { Component,} from 'react';
 import { Text, View,  StyleSheet, FlatList, ScrollView } from 'react-native';
-
+import { TouchableOpacity, TouchableNativeFeedback } from 'react-native-gesture-handler';
 import { Ionicons } from '@expo/vector-icons';
 
 import FoodItem from '../objects/FoodItem';
@@ -25,8 +25,9 @@ export default class Inventory extends Component {
           renderItem={({item}) => <Text style={styles.item}>{item.key}</Text>}
         />
         </ScrollView>
-        <Ionicons style={styles.icon} name="md-add-circle-outline" size={50} color="black" />
-      
+        <TouchableNativeFeedback style={styles.icon} onPress={() => this.props.navigation.navigate('AddFoodScreen')}>
+          <Ionicons  name="md-add-circle-outline" size={60} color="black" />
+        </TouchableNativeFeedback>
       </View>
     );
    
@@ -38,11 +39,8 @@ const styles = StyleSheet.create({
 
 
   icon: {
-    flex: 1,
-    position: 'absolute',
-    justifyContent: 'flex-end',
-    marginTop: 500,
-    marginLeft: 320
+    marginLeft: 340,
+    marginBottom: 10,
   },
   container: {
     

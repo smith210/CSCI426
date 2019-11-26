@@ -31,11 +31,11 @@ export default class Home extends Component {
         <TouchableOpacity style={styles.button} onPress={() => this.props.navigation.navigate('InventoryScreen')}>
           <Ionicons style={styles.icon} name="md-nutrition" size={30} color='white'/>
           <Text style={styles.buttonText}>Inventory</Text>
-          </TouchableOpacity>
-        <TouchableOpacity style={styles.button}>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button} onPress={() => this.props.navigation.navigate('AddFoodScreen')}>
           <Ionicons style={styles.icon} name="md-ice-cream" size={30} color='white'/>
           <Text style={styles.buttonText}>Add Food</Text>
-          </TouchableOpacity>
+        </TouchableOpacity>
         </View>
 
         <View style={styles.horizontal}></View>

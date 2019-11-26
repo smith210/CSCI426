@@ -8,6 +8,7 @@ import { createStackNavigator, } from 'react-navigation-stack';
 
 import Home from '../screens/home';
 import Inventory from '../screens/inventory';
+import Add from '../screens/add';
 
 const HomeStack = createStackNavigator({
   HomeScreen: {
@@ -31,6 +32,16 @@ const InventStack = createStackNavigator({
   },
 });
 
+const AddStack = createStackNavigator({
+  AddFoodScreen: {
+    screen: Add,
+    navigationOptions: ({ navigation }) => ({
+      title: 'Add Food',  // Title to appear in status bar
+      headerLeft: <Ionicons style={styles.icon} name="md-menu" size={35} onPress={ () => navigation.toggleDrawer() } />
+    }),
+  },
+});
+
 
 
 const DrawerNav = createDrawerNavigator(
@@ -46,8 +57,17 @@ const DrawerNav = createDrawerNavigator(
     navigationOptions: {
       title: 'Inventory'
     }
+  },
+
+
+AddFoodScreen: {
+  screen: AddStack,
+  navigationOptions: {
+    title: 'Add Food'
   }
+}
 },
+
 
 {
   initalRouteName: 'Home'
