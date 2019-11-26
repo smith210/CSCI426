@@ -5,31 +5,17 @@ import { Ionicons } from '@expo/vector-icons';
 
 import FoodItem from '../objects/FoodItem';
 
+import SearchBar from '../components/search';
+
 
 export default class Inventory extends Component {
- /*constructor(props) {
-   super(props);
 
-   this.state= {
-     loading: false,
-     data: [],
-     error: null
-   };
- }*/
-
-  /*state = {
-    search: '',
-  }
-
-  updateSearch = search => {
-    this.setState({search});
-  }
-
-  }*/
+  
 
   render() {
     return(
     <View style={styles.container}>
+      <SearchBar />
       <ScrollView>
         <FlatList
         data={[
@@ -46,6 +32,7 @@ export default class Inventory extends Component {
    
   }
 }
+
 
 const styles = StyleSheet.create({
 
@@ -68,5 +55,6 @@ const styles = StyleSheet.create({
      height: 44,
    },
 
+  
 });
 
