@@ -1,30 +1,36 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { Header } from 'react-native-elements';
-import { Ionicons } from '@expo/vector-icons';
-import Home from './screens/home';
+import React ,{Component,}from 'react';
+import { StyleSheet,View } from 'react-native';
+import { createAppContainer , } from 'react-navigation';
+import 'react-native-gesture-handler';
 
-//const AppContainer = createAppContainer(AppNavigator);
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Header 
-        leftComponent ={ <Ionicons name="md-menu" size={32} color={'#fff'}/> }
-        centerComponent={{text: 'SmartFridge',   style:{ color: '#fff', fontSize: 24}} }
-      />
-      <Home></Home>
-    </View>
+
+
+import Nav from './components/navigation';
+
+
+const AppNavigator = createAppContainer(Nav);
+
+class App extends Component{
+ 
+  render(){
+    return(
+      <AppNavigator/>
+  )}
     
-  );
-}
+  }
+
 
 const styles = StyleSheet.create({
   container: {
-    /*flex: 1,
+    flex: 1,
     backgroundColor: '#fff',
-    alignItems: '',
-    justifyContent: 'center',*/
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 
 });
+
+export default App;
+
+
