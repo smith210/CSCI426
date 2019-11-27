@@ -1,35 +1,21 @@
 import React, { Component,} from 'react';
 import { Text, View,  StyleSheet, FlatList, ScrollView } from 'react-native';
-
+import { TouchableOpacity, TouchableNativeFeedback } from 'react-native-gesture-handler';
 import { Ionicons } from '@expo/vector-icons';
 
 import FoodItem from '../objects/FoodItem';
 
+import SearchBar from '../components/search';
+
 
 export default class Inventory extends Component {
- /*constructor(props) {
-   super(props);
 
-   this.state= {
-     loading: false,
-     data: [],
-     error: null
-   };
- }*/
-
-  /*state = {
-    search: '',
-  }
-
-  updateSearch = search => {
-    this.setState({search});
-  }
-
-  }*/
+  
 
   render() {
     return(
     <View style={styles.container}>
+      <SearchBar />
       <ScrollView>
         <FlatList
         data={[
@@ -39,23 +25,22 @@ export default class Inventory extends Component {
           renderItem={({item}) => <Text style={styles.item}>{item.key}</Text>}
         />
         </ScrollView>
-        <Ionicons style={styles.icon} name="md-add-circle-outline" size={50} color="black" />
-      
+        <TouchableNativeFeedback style={styles.icon} onPress={() => this.props.navigation.navigate('AddFoodScreen')}>
+          <Ionicons  name="md-add-circle-outline" size={60} color="black" />
+        </TouchableNativeFeedback>
       </View>
     );
    
   }
 }
 
+
 const styles = StyleSheet.create({
 
 
   icon: {
-    flex: 1,
-    position: 'absolute',
-    justifyContent: 'flex-end',
-    marginTop: 500,
-    marginLeft: 320
+    marginLeft: 340,
+    marginBottom: 10,
   },
   container: {
     
@@ -68,5 +53,6 @@ const styles = StyleSheet.create({
      height: 44,
    },
 
+  
 });
 
