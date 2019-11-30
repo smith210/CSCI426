@@ -12,7 +12,7 @@ Once the install completes, start the app using the command
 ```
 npm start
 ```
-This command will give you a local url to access the dev controls for the app. It usually points to `http://localhost:19002/`. Open the URL in your browser.
+This command will give you a local url to access the dev controls for the app. It usually points to http://localhost:19002/. Open the URL in your browser.
 
 Ensure your Android emulator is already running before proceeding to the next step.
 
@@ -32,6 +32,9 @@ Have an Anrdoid phone emulator. Instructions on how to create an emulator on you
 
 ## Authors
 Ashlyn Hartnett
+
 Amelia Espiritu-Santo
+
 Martin Smith
+
 Melody Grappo
