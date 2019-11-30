@@ -6,7 +6,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { TouchableOpacity, FlatList } from 'react-native-gesture-handler';
 
 
-
+import FoodItem from '../components/foodItem';
 
 export default class Home extends Component {
   // constructor(){
@@ -124,13 +124,10 @@ export default class Home extends Component {
         </Text>
 
         <View style={styles.containers}>
-          <FlatList
-            data={[
-                {key: 'apples'},
-                {key: 'pizza'}
-            ]}
-            renderItem={({item}) => <Text style={styles.item}>{item.key}</Text>}
-          />
+          <ScrollView>
+          <FoodItem name='Apples' quantity='8' image='md-apple' date='November 31, 2019'/>
+          
+          </ScrollView>
 
         </View>
 

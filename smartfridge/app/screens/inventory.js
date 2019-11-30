@@ -8,11 +8,11 @@ import FoodItem from '../components/foodItem';
 
 import SearchBar from '../components/search';
 import Database from '../database/Database';
-const db = new Database();
+//const db = new Database();
 
 
 export default class Inventory extends Component {
-  constructor() {
+  /*constructor() {
     super();
     this.state = {
       isLoading: true,
@@ -23,10 +23,10 @@ export default class Inventory extends Component {
   }
   componentDidMount(){
     this.getItems();
-  }
+  }*/
 
 
-  getItems() {
+  /*getItems() {
     console.log("inside get products");
     let inventory = [];
     data  = db.getInventory();
@@ -37,14 +37,17 @@ export default class Inventory extends Component {
         isLoading: false,
       });
       console.log(data);
-  }
+  }*/
  
   render() {
     return(
     <View style={styles.container}>
       <SearchBar />
       <ScrollView>
-        <FoodItem name='Apples' quantity='8' image='md-apple'/>
+        <FoodItem name='Apples' quantity='8' image='md-apple' date='November 31, 2019'/>
+        <FoodItem name='Milk' quantity='1' image='md-apple' date='December 02, 2019'/>
+        <FoodItem name='Bread' quantity='2' image='md-apple' date='December 10, 2019'/>
+        <FoodItem name='Cheese' quantity='3' image='md-apple' date='December 15, 2019'/>
       </ScrollView>
         <TouchableNativeFeedback style={styles.icon} onPress={() => this.props.navigation.navigate('AddFoodScreen')}>
           <Ionicons  name="md-add-circle-outline" size={60} color="black" />

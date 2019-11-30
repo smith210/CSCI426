@@ -23,7 +23,6 @@ class Search extends Component{
               <Ionicons name="md-search" size={20}/>
               <TextInput placeholder='Type Search here' onChangeText={this.updateSearch} value={search} />
             </View>
-            <Ionicons name="md-settings" size={20}/>
           </View>
           
         );
