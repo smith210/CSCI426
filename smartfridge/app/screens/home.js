@@ -1,14 +1,75 @@
 import React, { Component } from 'react';
-import { Text, View, Button, StyleSheet, ScrollView } from 'react-native';
-
+import { Text, View, Button, StyleSheet,SafeAreaView, ProgressBarAndroid, ScrollView } from 'react-native';
+import Constants from 'expo-constants';
 import * as Font from 'expo-font';
 import { Ionicons } from '@expo/vector-icons';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import { TouchableOpacity, FlatList } from 'react-native-gesture-handler';
 
 
 
 
 export default class Home extends Component {
+  // constructor(){
+  //   super();
+  //   this.state = {
+  //     expiringSoon: []
+  //   }
+  // }
+
+  // renderItem = ({item}) => {
+  //   return(
+  //     //TODO get icon, names, and expiration date from database
+  //     <View style = {{flex: 1, flexDirection: 'row', marginBottom: 3}}> 
+  //       <Image style={{width: 80, height: 80, margin: 5}}
+  //         source={{uri: item.icon}} /> 
+  //       <View style={{flex: 1, justifyContent: 'center', marginLeft: 5}}>
+  //         <Text style ={{fontSize: 18, marginBottom: 5}}>
+  //           {item.name}
+  //         </Text>
+  //         <Text style={{fontSize: 15, color: 'red'}}>
+  //           {item.expdate}
+  //         </Text>
+  //       </View>
+  //     </View>
+  //   )
+  // }
+
+  // //creates the black line between each items 
+  // renderSeparator = () => {
+  //   <View style={{height:1, width:'100%', background: 'black'}}>
+  //   </View>
+  // }
+
+  // //TODO: look at database and replace url
+  // getFromDatabase(){
+  //   //url
+  //   fetch(url)
+  //   .then((response) => response.json())
+  //   .then((responseJson) => {
+  //     this.setState({
+  //       expiringSoon: responseJson.name //TODO replace with database schema
+  //     })
+  //   })
+  //   .catch((error) => {
+  //     console.log(error)
+  //   })
+  // }
+
+
+  // render() {
+  //   return(
+  //     <View style = {styles.container}>
+  //       <FlatList
+  //         data={this.state.expiringSoon}
+  //         renderItem={this.renderItem}
+  //         keyExtractor={(item, index) => index}
+  //         ItemSeparatorComponent={this.renderSeparator}
+  //       />
+  //     </View>
+  //   );
+  // }
+
+
   state = {
     fontLoaded: false,
   };
@@ -40,10 +101,46 @@ export default class Home extends Component {
 
         <View style={styles.horizontal}></View>
 
+        <Text style = {{fontSize: 24, fontWeight: 'bold', marginBottom: 3, marginLeft: 10}}>
+          Your Fridge
+        </Text>
+        <Text style = {{fontSize: 18, marginBottom: 5, marginLeft: 12}}> 
+          Your Status: Healthy!
+        </Text>
+
+
+        <View style={{marginLeft: 25, marginRight: 45, marginBottom: 40}}>
+					<ProgressBarAndroid 
+						styleAttr='Horizontal'
+						indeterminate={false}
+						progress={0.85}
+					/>
+				</View>
+
+
+
+        <Text style = {{fontSize: 24, fontWeight: 'bold', marginLeft: 10, marginBottom: 5}}>
+          Expiring Soon
+        </Text>
+
+        <View style={styles.containers}>
+          <FlatList
+            data={[
+                {key: 'apples'},
+                {key: 'pizza'}
+            ]}
+            renderItem={({item}) => <Text style={styles.item}>{item.key}</Text>}
+          />
+
+        </View>
+
       </View>
     );
   }
 }
+
+
+
 
 
 

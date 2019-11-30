@@ -1,5 +1,4 @@
 import { createDrawerNavigator, } from 'react-navigation-drawer';
-import { Header,  Button } from 'react-native-elements';
 import { Ionicons } from '@expo/vector-icons';
 import React from 'react';
 import {StyleSheet} from 'react-native';

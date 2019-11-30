@@ -18,10 +18,14 @@ class Search extends Component{
     render(){
         const {search} = this.state;
         return (
-          <View style={styles.search}>
-          <Ionicons name="md-search" size={20}/>
-          <TextInput placeholder='Type Search here' onChangeText={this.updateSearch} value={search} />
-        </View>
+          <View style={styles.container} >
+            <View style={styles.search}>
+              <Ionicons name="md-search" size={20}/>
+              <TextInput placeholder='Type Search here' onChangeText={this.updateSearch} value={search} />
+            </View>
+            <Ionicons name="md-settings" size={20}/>
+          </View>
+          
         );
     }
 }
@@ -29,7 +33,15 @@ class Search extends Component{
 const styles = StyleSheet.create({
     search: {
         flexDirection: 'row',
-        padding: 5
+        padding: 5,
+        borderColor: 'black',
+        borderRadius: 5,
+        borderWidth: 1,
+        margin: 5,
+        width: 350
+      },
+      container:{
+        flexDirection: 'row'
       }
 });
 

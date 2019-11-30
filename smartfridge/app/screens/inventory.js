@@ -1,30 +1,51 @@
 import React, { Component,} from 'react';
-import { Text, View,  StyleSheet, FlatList, ScrollView } from 'react-native';
+import { Text, View,  StyleSheet, FlatList, ScrollView, Button } from 'react-native';
 import { TouchableOpacity, TouchableNativeFeedback } from 'react-native-gesture-handler';
 import { Ionicons } from '@expo/vector-icons';
 
-import FoodItem from '../objects/FoodItem';
+
+import FoodItem from '../components/foodItem';
 
 import SearchBar from '../components/search';
+import Database from '../database/Database';
+const db = new Database();
 
 
 export default class Inventory extends Component {
+  constructor() {
+    super();
+    this.state = {
+      isLoading: true,
+      inventory: [],
+      notFound: 'Products not found.\nPlease click (+) button to add it.'
+    };
+    this.getItems = this.getItems.bind(this);
+  }
+  componentDidMount(){
+    this.getItems();
+  }
 
-  
 
+  getItems() {
+    console.log("inside get products");
+    let inventory = [];
+    data  = db.getInventory();
+      
+      inventory = data;
+      this.setState({
+        inventory,
+        isLoading: false,
+      });
+      console.log(data);
+  }
+ 
   render() {
     return(
     <View style={styles.container}>
       <SearchBar />
       <ScrollView>
-        <FlatList
-        data={[
-            {key: 'apples'},
-            {key: 'pizza'}
-          ]}
-          renderItem={({item}) => <Text style={styles.item}>{item.key}</Text>}
-        />
-        </ScrollView>
+        <FoodItem name='Apples' quantity='8' image='md-apple'/>
+      </ScrollView>
         <TouchableNativeFeedback style={styles.icon} onPress={() => this.props.navigation.navigate('AddFoodScreen')}>
           <Ionicons  name="md-add-circle-outline" size={60} color="black" />
         </TouchableNativeFeedback>
@@ -51,7 +72,12 @@ const styles = StyleSheet.create({
      padding: 10,
      fontSize: 18,
      height: 44,
+     borderBottomColor: 'black',
+     borderBottomWidth: 1
    },
+   section: {
+     
+   }
 
   
 });
